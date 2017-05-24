@@ -18,6 +18,18 @@
 		126B02C01ED5605A0029F891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126B02BE1ED5605A0029F891 /* LaunchScreen.storyboard */; };
 		126B02CB1ED5605B0029F891 /* FileCacheDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B02CA1ED5605B0029F891 /* FileCacheDemoTests.swift */; };
 		126B02D61ED5605B0029F891 /* FileCacheDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B02D51ED5605B0029F891 /* FileCacheDemoUITests.swift */; };
+		63559B841ED5D68E001C2F7A /* CacheConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B821ED5D68E001C2F7A /* CacheConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63559B851ED5D68E001C2F7A /* CacheConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B831ED5D68E001C2F7A /* CacheConfiguration.m */; };
+		63559B881ED5D6B3001C2F7A /* CacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B861ED5D6B3001C2F7A /* CacheManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63559B891ED5D6B3001C2F7A /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B871ED5D6B3001C2F7A /* CacheManager.m */; };
+		63559B8D1ED5D6EA001C2F7A /* FileDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B8B1ED5D6EA001C2F7A /* FileDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63559B8E1ED5D6EA001C2F7A /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B8C1ED5D6EA001C2F7A /* FileDownloader.m */; };
+		63559B921ED5D736001C2F7A /* FileInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B901ED5D736001C2F7A /* FileInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63559B931ED5D736001C2F7A /* FileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B911ED5D736001C2F7A /* FileInfo.m */; };
+		63559B971ED5D7B2001C2F7A /* CacheFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B951ED5D7B2001C2F7A /* CacheFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63559B981ED5D7B2001C2F7A /* CacheFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B961ED5D7B2001C2F7A /* CacheFileManager.m */; };
+		63559B9D1ED62202001C2F7A /* FileCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126B02921ED55E440029F891 /* FileCache.framework */; };
+		63559B9E1ED62202001C2F7A /* FileCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 126B02921ED55E440029F891 /* FileCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +54,28 @@
 			remoteGlobalIDString = 126B02AF1ED5605A0029F891;
 			remoteInfo = FileCacheDemo;
 		};
+		63559B9F1ED62202001C2F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 126B02891ED55E440029F891 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 126B02911ED55E440029F891;
+			remoteInfo = FileCache;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63559BA11ED62202001C2F7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				63559B9E1ED62202001C2F7A /* FileCache.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		126B02921ED55E440029F891 /* FileCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +98,16 @@
 		126B02D11ED5605B0029F891 /* FileCacheDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileCacheDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		126B02D51ED5605B0029F891 /* FileCacheDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCacheDemoUITests.swift; sourceTree = "<group>"; };
 		126B02D71ED5605B0029F891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63559B821ED5D68E001C2F7A /* CacheConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheConfiguration.h; sourceTree = "<group>"; };
+		63559B831ED5D68E001C2F7A /* CacheConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheConfiguration.m; sourceTree = "<group>"; };
+		63559B861ED5D6B3001C2F7A /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		63559B871ED5D6B3001C2F7A /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
+		63559B8B1ED5D6EA001C2F7A /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
+		63559B8C1ED5D6EA001C2F7A /* FileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
+		63559B901ED5D736001C2F7A /* FileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
+		63559B911ED5D736001C2F7A /* FileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileInfo.m; sourceTree = "<group>"; };
+		63559B951ED5D7B2001C2F7A /* CacheFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheFileManager.h; sourceTree = "<group>"; };
+		63559B961ED5D7B2001C2F7A /* CacheFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63559B9D1ED62202001C2F7A /* FileCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +178,10 @@
 		126B02941ED55E440029F891 /* FileCache */ = {
 			isa = PBXGroup;
 			children = (
+				63559B941ED5D74F001C2F7A /* File Managment */,
+				63559B8F1ED5D6F9001C2F7A /* DataModels */,
+				63559B8A1ED5D6C0001C2F7A /* Download Managment */,
+				63559B811ED5D64D001C2F7A /* Cache Managment */,
 				126B02951ED55E440029F891 /* FileCache.h */,
 				126B02961ED55E440029F891 /* Info.plist */,
 			);
@@ -181,6 +229,44 @@
 			path = FileCacheDemoUITests;
 			sourceTree = "<group>";
 		};
+		63559B811ED5D64D001C2F7A /* Cache Managment */ = {
+			isa = PBXGroup;
+			children = (
+				63559B821ED5D68E001C2F7A /* CacheConfiguration.h */,
+				63559B831ED5D68E001C2F7A /* CacheConfiguration.m */,
+				63559B861ED5D6B3001C2F7A /* CacheManager.h */,
+				63559B871ED5D6B3001C2F7A /* CacheManager.m */,
+			);
+			name = "Cache Managment";
+			sourceTree = "<group>";
+		};
+		63559B8A1ED5D6C0001C2F7A /* Download Managment */ = {
+			isa = PBXGroup;
+			children = (
+				63559B8B1ED5D6EA001C2F7A /* FileDownloader.h */,
+				63559B8C1ED5D6EA001C2F7A /* FileDownloader.m */,
+			);
+			name = "Download Managment";
+			sourceTree = "<group>";
+		};
+		63559B8F1ED5D6F9001C2F7A /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				63559B901ED5D736001C2F7A /* FileInfo.h */,
+				63559B911ED5D736001C2F7A /* FileInfo.m */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		63559B941ED5D74F001C2F7A /* File Managment */ = {
+			isa = PBXGroup;
+			children = (
+				63559B951ED5D7B2001C2F7A /* CacheFileManager.h */,
+				63559B961ED5D7B2001C2F7A /* CacheFileManager.m */,
+			);
+			name = "File Managment";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -188,6 +274,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63559B921ED5D736001C2F7A /* FileInfo.h in Headers */,
+				63559B881ED5D6B3001C2F7A /* CacheManager.h in Headers */,
+				63559B971ED5D7B2001C2F7A /* CacheFileManager.h in Headers */,
+				63559B8D1ED5D6EA001C2F7A /* FileDownloader.h in Headers */,
+				63559B841ED5D68E001C2F7A /* CacheConfiguration.h in Headers */,
 				126B02A31ED55E440029F891 /* FileCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,10 +329,12 @@
 				126B02AC1ED5605A0029F891 /* Sources */,
 				126B02AD1ED5605A0029F891 /* Frameworks */,
 				126B02AE1ED5605A0029F891 /* Resources */,
+				63559BA11ED62202001C2F7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63559BA01ED62202001C2F7A /* PBXTargetDependency */,
 			);
 			name = FileCacheDemo;
 			productName = FileCacheDemo;
@@ -386,6 +479,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63559B8E1ED5D6EA001C2F7A /* FileDownloader.m in Sources */,
+				63559B931ED5D736001C2F7A /* FileInfo.m in Sources */,
+				63559B891ED5D6B3001C2F7A /* CacheManager.m in Sources */,
+				63559B981ED5D7B2001C2F7A /* CacheFileManager.m in Sources */,
+				63559B851ED5D68E001C2F7A /* CacheConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +538,11 @@
 			isa = PBXTargetDependency;
 			target = 126B02AF1ED5605A0029F891 /* FileCacheDemo */;
 			targetProxy = 126B02D21ED5605B0029F891 /* PBXContainerItemProxy */;
+		};
+		63559BA01ED62202001C2F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 126B02911ED55E440029F891 /* FileCache */;
+			targetProxy = 63559B9F1ED62202001C2F7A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -571,6 +674,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FileCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.david.FileCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,6 +692,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FileCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.david.FileCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,6 +725,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FileCacheDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.david.FileCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -634,6 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FileCacheDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.david.FileCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -721,6 +828,7 @@
 				126B02A81ED55E440029F891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126B02A91ED55E440029F891 /* Build configuration list for PBXNativeTarget "FileCacheTests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +837,7 @@
 				126B02AB1ED55E440029F891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126B02D81ED5605B0029F891 /* Build configuration list for PBXNativeTarget "FileCacheDemo" */ = {
 			isa = XCConfigurationList;
@@ -737,6 +846,7 @@
 				126B02DA1ED5605B0029F891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126B02DB1ED5605B0029F891 /* Build configuration list for PBXNativeTarget "FileCacheDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -745,6 +855,7 @@
 				126B02DD1ED5605B0029F891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		126B02DE1ED5605B0029F891 /* Build configuration list for PBXNativeTarget "FileCacheDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -753,6 +864,7 @@
 				126B02E01ED5605B0029F891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

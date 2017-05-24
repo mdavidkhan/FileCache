@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import FileCache
 
 class ViewController: UIViewController {
-
+    //initilize file manager with instance
+    var cacheManager:CacheFileManager = CacheFileManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
+    @IBAction func test(_ sender: Any) {
+        let urlString = "http://imgs.xkcd.com/comics/i_am_not_good_with_boomerangs.png"
+        let url = NSURL(string: urlString)
+        let data = cacheManager.getDataFrom(url as URL!) { (data:Data?, error:Error?) in
+            print(data)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
