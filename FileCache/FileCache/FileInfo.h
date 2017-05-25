@@ -18,7 +18,7 @@
 -(instancetype)initWithFileData :(NSData *)fileData havingURL:(NSURL *)fileUrl;
 
 -(NSData *)getFileData;
-
+-(BOOL) isFileValidForURL:(NSURL *)fileURL;
 @end
 
 

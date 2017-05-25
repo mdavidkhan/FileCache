@@ -23,8 +23,23 @@
 }
 
 -(NSData *)getFileData{
-    //update the date on every eccess
-    _lastAccess = [NSDate date];
+     //update the date on every eccess
+    [self UpdateAccess];
     return _fileData;
+}
+
+-(BOOL) isFileValidForURL:(NSURL *)fileURL{
+    //update the date on every eccess
+    [self UpdateAccess];
+    if ([_fileUrl.absoluteString isEqualToString:fileURL.absoluteString]) {
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+-(void)UpdateAccess{
+   
+    _lastAccess = [NSDate date];
 }
 @end

@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FileInfo.h"
 
 @interface CacheFileManager : NSObject
 //+ (id) sharedFileManager;
 
--(void)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(NSData* data, NSError* error))completionBlock;
+-(void)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock;
 
 -(void)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock;
 
