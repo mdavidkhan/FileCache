@@ -18,6 +18,13 @@
 		126B02C01ED5605A0029F891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126B02BE1ED5605A0029F891 /* LaunchScreen.storyboard */; };
 		126B02CB1ED5605B0029F891 /* FileCacheDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B02CA1ED5605B0029F891 /* FileCacheDemoTests.swift */; };
 		126B02D61ED5605B0029F891 /* FileCacheDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B02D51ED5605B0029F891 /* FileCacheDemoUITests.swift */; };
+		1273583D1ED7F269004ECCBA /* NSDate+CustomeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273583C1ED7F269004ECCBA /* NSDate+CustomeActions.swift */; };
+		127358401ED8099E004ECCBA /* PinterestArray+CustomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273583F1ED8099E004ECCBA /* PinterestArray+CustomeAction.swift */; };
+		127358421ED812CA004ECCBA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127358411ED812CA004ECCBA /* Utils.swift */; };
+		127358451ED8465E004ECCBA /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 127358431ED8465E004ECCBA /* Utils.h */; };
+		127358461ED8465E004ECCBA /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 127358441ED8465E004ECCBA /* Utils.m */; };
+		127358491ED852FF004ECCBA /* DownloadBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 127358471ED852FF004ECCBA /* DownloadBlockOperation.h */; };
+		1273584A1ED852FF004ECCBA /* DownloadBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 127358481ED852FF004ECCBA /* DownloadBlockOperation.m */; };
 		63559B841ED5D68E001C2F7A /* CacheConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B821ED5D68E001C2F7A /* CacheConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63559B851ED5D68E001C2F7A /* CacheConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 63559B831ED5D68E001C2F7A /* CacheConfiguration.m */; };
 		63559B881ED5D6B3001C2F7A /* CacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63559B861ED5D6B3001C2F7A /* CacheManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -106,6 +113,13 @@
 		126B02D11ED5605B0029F891 /* FileCacheDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileCacheDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		126B02D51ED5605B0029F891 /* FileCacheDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCacheDemoUITests.swift; sourceTree = "<group>"; };
 		126B02D71ED5605B0029F891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1273583C1ED7F269004ECCBA /* NSDate+CustomeActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+CustomeActions.swift"; sourceTree = "<group>"; };
+		1273583F1ED8099E004ECCBA /* PinterestArray+CustomeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PinterestArray+CustomeAction.swift"; sourceTree = "<group>"; };
+		127358411ED812CA004ECCBA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		127358431ED8465E004ECCBA /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		127358441ED8465E004ECCBA /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		127358471ED852FF004ECCBA /* DownloadBlockOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadBlockOperation.h; sourceTree = "<group>"; };
+		127358481ED852FF004ECCBA /* DownloadBlockOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadBlockOperation.m; sourceTree = "<group>"; };
 		63559B821ED5D68E001C2F7A /* CacheConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheConfiguration.h; sourceTree = "<group>"; };
 		63559B831ED5D68E001C2F7A /* CacheConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheConfiguration.m; sourceTree = "<group>"; };
 		63559B861ED5D6B3001C2F7A /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
@@ -195,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				63559B941ED5D74F001C2F7A /* File Managment */,
-				63559B8F1ED5D6F9001C2F7A /* DataModels */,
+				63559B8F1ED5D6F9001C2F7A /* DataModels&Utils */,
 				63559B8A1ED5D6C0001C2F7A /* Download Managment */,
 				63559B811ED5D64D001C2F7A /* Cache Managment */,
 				126B02951ED55E440029F891 /* FileCache.h */,
@@ -250,6 +264,19 @@
 			path = FileCacheDemoUITests;
 			sourceTree = "<group>";
 		};
+		1273583E1ED80282004ECCBA /* Custome Pinterest */ = {
+			isa = PBXGroup;
+			children = (
+				635EBF8E1ED74FB6001A03D1 /* CustomPinterestObjectModel.swift */,
+				635EBF901ED75D19001A03D1 /* userOfPinterest.swift */,
+				635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */,
+				635EBF921ED75DCC001A03D1 /* ProfileImages.swift */,
+				635EBF941ED75E7D001A03D1 /* LinksForPinterestUser.swift */,
+				635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */,
+			);
+			name = "Custome Pinterest";
+			sourceTree = "<group>";
+		};
 		63559B811ED5D64D001C2F7A /* Cache Managment */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,13 +297,17 @@
 			name = "Download Managment";
 			sourceTree = "<group>";
 		};
-		63559B8F1ED5D6F9001C2F7A /* DataModels */ = {
+		63559B8F1ED5D6F9001C2F7A /* DataModels&Utils */ = {
 			isa = PBXGroup;
 			children = (
 				63559B901ED5D736001C2F7A /* FileInfo.h */,
 				63559B911ED5D736001C2F7A /* FileInfo.m */,
+				127358431ED8465E004ECCBA /* Utils.h */,
+				127358441ED8465E004ECCBA /* Utils.m */,
+				127358471ED852FF004ECCBA /* DownloadBlockOperation.h */,
+				127358481ED852FF004ECCBA /* DownloadBlockOperation.m */,
 			);
-			name = DataModels;
+			name = "DataModels&Utils";
 			sourceTree = "<group>";
 		};
 		63559B941ED5D74F001C2F7A /* File Managment */ = {
@@ -306,6 +337,9 @@
 		635EBF8A1ED74E46001A03D1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1273583C1ED7F269004ECCBA /* NSDate+CustomeActions.swift */,
+				1273583F1ED8099E004ECCBA /* PinterestArray+CustomeAction.swift */,
+				127358411ED812CA004ECCBA /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -313,12 +347,7 @@
 		635EBF8D1ED74F42001A03D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				635EBF8E1ED74FB6001A03D1 /* CustomPinterestObjectModel.swift */,
-				635EBF901ED75D19001A03D1 /* userOfPinterest.swift */,
-				635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */,
-				635EBF921ED75DCC001A03D1 /* ProfileImages.swift */,
-				635EBF941ED75E7D001A03D1 /* LinksForPinterestUser.swift */,
-				635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */,
+				1273583E1ED80282004ECCBA /* Custome Pinterest */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -332,8 +361,10 @@
 			files = (
 				63559B921ED5D736001C2F7A /* FileInfo.h in Headers */,
 				63559B881ED5D6B3001C2F7A /* CacheManager.h in Headers */,
+				127358491ED852FF004ECCBA /* DownloadBlockOperation.h in Headers */,
 				63559B971ED5D7B2001C2F7A /* CacheFileManager.h in Headers */,
 				63559B8D1ED5D6EA001C2F7A /* FileDownloader.h in Headers */,
+				127358451ED8465E004ECCBA /* Utils.h in Headers */,
 				63559B841ED5D68E001C2F7A /* CacheConfiguration.h in Headers */,
 				126B02A31ED55E440029F891 /* FileCache.h in Headers */,
 			);
@@ -538,7 +569,9 @@
 				63559B8E1ED5D6EA001C2F7A /* FileDownloader.m in Sources */,
 				63559B931ED5D736001C2F7A /* FileInfo.m in Sources */,
 				63559B891ED5D6B3001C2F7A /* CacheManager.m in Sources */,
+				127358461ED8465E004ECCBA /* Utils.m in Sources */,
 				63559B981ED5D7B2001C2F7A /* CacheFileManager.m in Sources */,
+				1273584A1ED852FF004ECCBA /* DownloadBlockOperation.m in Sources */,
 				63559B851ED5D68E001C2F7A /* CacheConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,12 +591,15 @@
 				635EBF911ED75D19001A03D1 /* userOfPinterest.swift in Sources */,
 				126B02B51ED5605A0029F891 /* ViewController.swift in Sources */,
 				126B02B31ED5605A0029F891 /* AppDelegate.swift in Sources */,
+				127358421ED812CA004ECCBA /* Utils.swift in Sources */,
 				635EBF8F1ED74FB6001A03D1 /* CustomPinterestObjectModel.swift in Sources */,
 				635EBF991ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift in Sources */,
+				1273583D1ED7F269004ECCBA /* NSDate+CustomeActions.swift in Sources */,
 				635EBF8C1ED74E7D001A03D1 /* WebServicesManager.swift in Sources */,
 				635EBF931ED75DCC001A03D1 /* ProfileImages.swift in Sources */,
 				635EBF851ED72DD4001A03D1 /* CollectionViewCell.swift in Sources */,
 				635EBF951ED75E7D001A03D1 /* LinksForPinterestUser.swift in Sources */,
+				127358401ED8099E004ECCBA /* PinterestArray+CustomeAction.swift in Sources */,
 				635EBF971ED75FF7001A03D1 /* UrlsOfPinterestObject.swift in Sources */,
 				126B02BB1ED5605A0029F891 /* FileCacheDemo.xcdatamodeld in Sources */,
 			);

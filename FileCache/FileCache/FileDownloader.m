@@ -8,6 +8,8 @@
 
 #import "FileDownloader.h"
 
+#import "DownloadBlockOperation.h"
+
 #define kMaxConcurrentOperation 10
 
 @interface FileDownloader ()
@@ -34,9 +36,9 @@
     _downloadRequestQueue = [[NSOperationQueue alloc] init];
 }
 
--(void)downloadDataFromUrl:(NSURL *)dataURL WithCompletionHandler :(void (^) (NSData * data, NSError * error))completionBlock {
+-(void)downloadDataFromUrl:(NSURL *)dataURL timeStamp:(NSString *)timeStamp WithCompletionHandler :(void (^) (NSData * data, NSError * error))completionBlock {
     //create an operation to download single file
-    NSBlockOperation *downloadOperation = [NSBlockOperation blockOperationWithBlock:^{
+    DownloadBlockOperation *downloadOperation = [DownloadBlockOperation blockOperationWithBlock:^{
         
         NSURLRequest* request = [NSURLRequest requestWithURL:dataURL cachePolicy:0 timeoutInterval:60];
         __block NSError* errorReturned=nil;
@@ -61,8 +63,19 @@
         
     }];
     
+    [downloadOperation setTimeStamp:timeStamp];
     
     [_downloadRequestQueue addOperation:downloadOperation];
+    
+    
+    /////// canceling an object call
+    
+    for (DownloadBlockOperation *operation in _downloadRequestQueue.operations) {
+        if ([operation.timeStamp isEqualToString:timeStamp]) {
+            [operation cancel];
+            
+        }
+    }
     
 }
 @end

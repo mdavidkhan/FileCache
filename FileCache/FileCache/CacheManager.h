@@ -15,5 +15,5 @@
 @property (strong,nonatomic) NSCache *currentCache;
 -(void)clearCache;
 +(id)sharedCacheManager;
-
+-(void)applyCustomeConfiguration :(CacheConfiguration *)configuration;
 @end

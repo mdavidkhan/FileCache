@@ -17,4 +17,22 @@ class LinksForPinterestUser: NSObject {
     var photos:String?
     
     var likes:String?
+    
+    override init () {
+        super.init()
+    }
+    
+    
+    convenience init(_ dictionary: Dictionary<String, AnyObject>) {
+        
+        self.init()
+        
+        self.selfURLString = dictionary["self"] as? String
+        
+        self.html = dictionary["html"] as? String
+        
+        self.photos = dictionary["photos"] as? String
+        
+        self.likes = dictionary["likes"] as? String
+    }
 }

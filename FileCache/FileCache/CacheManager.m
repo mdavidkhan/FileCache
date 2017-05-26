@@ -25,11 +25,18 @@
 }
 -(void)postInitialization{
     _currentCache = [[NSCache alloc] init];
-    [_currentCache setTotalCostLimit:_congiguration.maximumCapacity];
+    _congiguration = [[CacheConfiguration alloc] initWithDefaultConfiguration];
+    //here I just reuse the same method for default configuration also
+    [self applyCustomeConfiguration:_congiguration];
     
 }
 -(void)clearCache{
     [_currentCache removeAllObjects];
 }
-
+-(void)applyCustomeConfiguration :(CacheConfiguration *)configuration{
+    
+    _congiguration = configuration;
+    [_currentCache setTotalCostLimit:_congiguration.maximumCapacity];
+    [_currentCache setCountLimit:_congiguration.MaximumNumberOfFiles];
+}
 @end

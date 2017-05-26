@@ -20,4 +20,28 @@ class CatagoriesOfPenterestObject: NSObject {
     
     var Links_photos:String?
     
+    override init () {
+        super.init()
+    }
+    
+    
+    convenience init(_ dictionary: Dictionary<String, AnyObject>) {
+        
+        self.init()
+        
+        self.id = (dictionary["id"] as? NSNumber) as? Double
+        
+        self.title = dictionary["title"] as? String
+        
+        self.photo_count = (dictionary["photo_count"] as? NSNumber) as? Double
+        
+        if let linksDictionary = dictionary["Links"] as? [String: AnyObject] {
+            
+            self.links_self = linksDictionary["self"] as? String
+            
+            self.Links_photos = linksDictionary["photos"] as? String
+        }
+       
+    }
+
 }

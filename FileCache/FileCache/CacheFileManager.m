@@ -7,9 +7,6 @@
 //
 
 #import "CacheFileManager.h"
-#import "CacheManager.h"
-#import "FileInfo.h"
-#import "FileDownloader.h"
 
 @interface CacheFileManager()
 
@@ -20,18 +17,7 @@
 
 @implementation CacheFileManager
 
-//+ (id) sharedFileManager{
-//    
-//    static dispatch_once_t pred = 0;
-//    static id _sharedObject = nil;
-//    
-//    dispatch_once(&pred, ^{
-//        _sharedObject = [[self alloc] init];
-//        [_sharedObject postInitialization];
-//    });
-//    
-//    return _sharedObject;
-//}
+
 -(id)init{
     self = [super init];
     if(self)
@@ -42,8 +28,13 @@
     return self;
 }
 
+-(void)applyCacheCustomConfiguration :(CacheConfiguration *)configuration{
+    //apply custome configuration to cache manager if this is not applied then the default configuration will be loaded
+    [_cacheManager applyCustomeConfiguration:configuration];
+}
+
 #pragma mark File Operation
--(void)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock{
+-(void)getDataFromURL:(NSURL *)dataURL timeStamp:() WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         //check file in cache
         FileInfo *file = [self getCachedObjectByURL:dataURL];
@@ -56,7 +47,7 @@
             
         }//else download it and save in cache
         else{
-            [[FileDownloader sharedFileDownloader] downloadDataFromUrl:dataURL WithCompletionHandler:^(NSData *data, NSError *error) {
+            [[FileDownloader sharedFileDownloader] downloadDataFromUrl:dataURL timeStamp:timeStamp WithCompletionHandler:^(NSData *data, NSError *error) {
                 FileInfo *downloadedFile;
                 if (error == nil && data !=nil) {
                     //if file is been downloaded in form of data then

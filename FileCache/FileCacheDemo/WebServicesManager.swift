@@ -33,14 +33,39 @@ class WebServicesManager: NSObject {
         //download and cache the complete JSON
         cacheManager.getDataFrom(dataURL as URL!) { (file:FileInfo?, error:Error?) in
             if (error == nil) && (file != nil) {
+                var pinterestModelsArray:[CustomPinterestObjectModel]? = []
                 //if data is availble then parse the JSON and create the readymate objects from JSON
                 do {
                     let object = try JSONSerialization.jsonObject(with: (file?.getFileData())!, options: .allowFragments)
-                    if let dictionary = object as? [String: AnyObject] {
-                        readJSONObject(dictionary)
+                    //parese to array because the webservice have main object as an array
+                    if let pinterestJSONObjectsArray = object as? NSArray{
+                        //init a model  for adding the data in proper way
+                        var pinterestObjectModel:CustomPinterestObjectModel?
+                        
+                        for singleObject in pinterestJSONObjectsArray {
+                            if let dictionary = singleObject as? [String: AnyObject] {
+                                pinterestObjectModel = CustomPinterestObjectModel(dictionary)
+                                pinterestModelsArray?.append(pinterestObjectModel!)
+                            }
+                        }
+                        
+                        
                     }
+                    guard let successMethod = self.delegate?.didFinishGetingDataFromPinterestTestService else {
+                        //ignore if delegate is not set
+                        return
+                    }
+                    //call delegate after successfull download of objects
+                    successMethod(pinterestModelsArray)
+                    
                 } catch {
-                    // Handle Error
+                    //Handle Error
+                    guard let failedMethod = self.delegate?.didFailedGetingDataFromPinterestTestService else {
+                        //ignore if delegate is not set
+                        return
+                    }
+                    
+                    failedMethod(error)
                 }
             }
             else{
@@ -55,8 +80,6 @@ class WebServicesManager: NSObject {
     }
 }
 protocol WebServicesManagerDelegates {
-    
-    
     /// This will call after successfully downloading of Pinterest test WebService data
     ///
     /// - Parameter fetchedObjectsArray:array having all downloaded objects which are ready for display

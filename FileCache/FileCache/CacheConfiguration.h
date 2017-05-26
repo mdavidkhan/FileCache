@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef NS_ENUM(NSUInteger, CacheType) {
+    Memory,
+    File,
+};
+
 
 @interface CacheConfiguration : NSObject
 
 @property (nonatomic) double maximumCapacity;
 @property (nonatomic) int MaximumNumberOfFiles;
-@property (strong,nonatomic) NSString *cacheType;
+@property (nonatomic) CacheType cacheType;
 
 -(instancetype)initWithDefaultConfiguration;
 
-
+-(instancetype)initWithCustomeConfigurationWithMaximumMemoryCapacity :(double) maximumCapacityInMB withMaximumNumberOfFiles:(int)maximumFiles withCacheType:(CacheType)theCacheType;
 @end

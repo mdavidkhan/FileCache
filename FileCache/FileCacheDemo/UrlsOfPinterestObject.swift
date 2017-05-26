@@ -20,4 +20,23 @@ class UrlsOfPinterestObject: NSObject {
     
     var thumb:String?
     
+    override init () {
+        super.init()
+    }
+    
+    
+    convenience init(_ dictionary: Dictionary<String, AnyObject>) {
+        
+        self.init()
+    
+        self.raw = dictionary["raw"] as? String
+        
+        self.full = dictionary["full"] as? String
+        
+        self.regular = dictionary["regular"] as? String
+        
+        self.small = dictionary["small"] as? String
+        
+        self.thumb = dictionary["thumb"] as? String
+    }
 }

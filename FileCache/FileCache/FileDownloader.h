@@ -11,5 +11,5 @@
 @interface FileDownloader : NSObject
 
 + (id) sharedFileDownloader;
--(void)downloadDataFromUrl:(NSURL *)dataURL   WithCompletionHandler :(void (^) (NSData * data, NSError * error))completionBlock;
+-(void)downloadDataFromUrl:(NSURL *)dataURL  timeStamp:(NSString *)timeStamp WithCompletionHandler :(void (^) (NSData * data, NSError * error))completionBlock;
 @end

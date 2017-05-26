@@ -13,6 +13,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     var imageView : UIImageView!
     
+    var timeStamp : NSString!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         postInit()
