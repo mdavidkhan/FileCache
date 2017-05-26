@@ -24,7 +24,7 @@
     return self;
 }
 
--(instancetype)initWithCustomeConfiguration :(double) maximumCapacityInMB withMaximumNumberOfFiles:(int)maximumFiles withCacheType:(CacheType)theCacheType{
+-(instancetype)initWithCustomeConfigurationWithMaximumMemoryCapacity :(double) maximumCapacityInMB withMaximumNumberOfFiles:(int)maximumFiles withCacheType:(CacheType)theCacheType{
     self = [super init];
     if(self)
     {

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CacheConfiguration.h"
 
-@interface CacheManager : NSObject
+@interface CacheManager : NSObject<NSCacheDelegate>
 
 @property (strong, nonatomic) CacheConfiguration * congiguration;
 @property (strong,nonatomic) NSCache *currentCache;

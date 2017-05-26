@@ -14,10 +14,13 @@
 
 @interface CacheFileManager : NSObject
 
--(void)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock;
+-(NSString *)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock;
 
 -(void)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock;
 
 -(void)applyCacheCustomConfiguration :(CacheConfiguration *)configuration;
+-(void)cancelDownloadOperationWithTimeStamp :(NSString *)timeStamp;
+-(void)removeFileFromCacheUsingURL:(NSURL *) fileURL;
+-(void)removeAllObjectFromCache;
 
 @end

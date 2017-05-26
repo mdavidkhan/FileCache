@@ -9,6 +9,7 @@
 #import "FileDownloader.h"
 
 #import "DownloadBlockOperation.h"
+#import "Utils.h"
 
 #define kMaxConcurrentOperation 10
 
@@ -62,20 +63,22 @@
         completionBlock(dataReturned,errorReturned);
         
     }];
-    
+    //set time stamp which will help us to identify the specific operation
     [downloadOperation setTimeStamp:timeStamp];
     
     [_downloadRequestQueue addOperation:downloadOperation];
     
     
-    /////// canceling an object call
+   
     
+}
+-(void)cancelOperationWithTimeStamp :(NSString *)timeStamp{
+    /////// canceling an operation
     for (DownloadBlockOperation *operation in _downloadRequestQueue.operations) {
         if ([operation.timeStamp isEqualToString:timeStamp]) {
             [operation cancel];
             
         }
     }
-    
 }
 @end

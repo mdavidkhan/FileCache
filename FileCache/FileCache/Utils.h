@@ -11,4 +11,5 @@
 @interface Utils : NSObject
 
 +(double)ConvertMBsToBytes :(double)MBs;
++(NSString *)createDownloadDownloadTimeStamp;
 @end

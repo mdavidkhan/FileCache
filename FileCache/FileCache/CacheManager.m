@@ -38,5 +38,11 @@
     _congiguration = configuration;
     [_currentCache setTotalCostLimit:_congiguration.maximumCapacity];
     [_currentCache setCountLimit:_congiguration.MaximumNumberOfFiles];
+    [_currentCache setDelegate:self];
+    [_currentCache setEvictsObjectsWithDiscardedContent:YES];
+    
+}
+- (void)cache:(NSCache *)cache willEvictObject:(id)obj{
+    NSLog(@"the object %@ is evicted ",obj);
 }
 @end

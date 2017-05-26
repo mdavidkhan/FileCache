@@ -12,4 +12,5 @@
 
 + (id) sharedFileDownloader;
 -(void)downloadDataFromUrl:(NSURL *)dataURL  timeStamp:(NSString *)timeStamp WithCompletionHandler :(void (^) (NSData * data, NSError * error))completionBlock;
+-(void)cancelOperationWithTimeStamp :(NSString *)timeStamp;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CacheFileManager.h"
+#import "Utils.h"
 
 @interface CacheFileManager()
 
@@ -34,7 +35,8 @@
 }
 
 #pragma mark File Operation
--(void)getDataFromURL:(NSURL *)dataURL timeStamp:() WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock{
+-(NSString *)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock{
+    __block NSString *timeStamp =[Utils createDownloadDownloadTimeStamp];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         //check file in cache
         FileInfo *file = [self getCachedObjectByURL:dataURL];
@@ -60,6 +62,10 @@
         }
         
     });
+    return timeStamp;
+}
+-(void)cancelDownloadOperationWithTimeStamp :(NSString *)timeStamp{
+    [[FileDownloader sharedFileDownloader] cancelOperationWithTimeStamp:timeStamp];
 }
 
 -(void)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock{
@@ -81,9 +87,15 @@
     //create file model
     FileInfo *file = [[FileInfo alloc] initWithFileData:fileData havingURL:fileURL];
     //save model to cache
-    [_cacheManager.currentCache setObject:file forKey:fileURL.absoluteString];
+    [_cacheManager.currentCache  setObject:file forKey:fileURL.absoluteString cost:[file getFileData].length];
     
     return file;
     
+}
+-(void)removeFileFromCacheUsingURL:(NSURL *) fileURL{
+    [_cacheManager.currentCache removeObjectForKey:fileURL];
+}
+-(void)removeAllObjectFromCache{
+    [_cacheManager.currentCache removeAllObjects];
 }
 @end

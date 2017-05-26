@@ -26,12 +26,26 @@ extension NSMutableArray {
     }
     
     
-  func addLatestObjectsFromArray (backUpArray:[CustomPinterestObjectModel])  {
-    
-    let firstMaxObject = backUpArray[0..<Int(maximimNumberForNewFilesLoading)]
-    for object in firstMaxObject{
-        self.add(object)
-    }
+    func addLatestObjectsFromArray ( backUpArray:[CustomPinterestObjectModel])  {
+        
+        var backUpArray = backUpArray
 
+        if (backUpArray.count >= Int(maximimNumberForNewFilesLoading)) {
+          let firstMaxObject = backUpArray[0..<Int(maximimNumberForNewFilesLoading)]
+            for object in firstMaxObject{
+                self.add(object)
+                
+            }
+        }
+        else if backUpArray.count > 0{
+            let firstMaxObject = backUpArray
+            for object in firstMaxObject{
+                self.add(object)
+                
+            }
+
+        }
+       
+        
     }
 }

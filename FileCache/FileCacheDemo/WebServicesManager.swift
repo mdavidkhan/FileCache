@@ -29,9 +29,9 @@ class WebServicesManager: NSObject {
     //initilize file manager with instance
     var cacheManager:CacheFileManager = CacheFileManager()
     
-    func downloadTheJSONDataUsingUrl(dataURL:NSURL) {
+    func downloadTheJSONDataUsingUrl(dataURL:URL) {
         //download and cache the complete JSON
-        cacheManager.getDataFrom(dataURL as URL!) { (file:FileInfo?, error:Error?) in
+        cacheManager.getDataFrom(dataURL) { (file:FileInfo?, error:Error?) in
             if (error == nil) && (file != nil) {
                 var pinterestModelsArray:[CustomPinterestObjectModel]? = []
                 //if data is availble then parse the JSON and create the readymate objects from JSON
@@ -90,4 +90,7 @@ protocol WebServicesManagerDelegates {
      /// - Parameter error: the generatedError
      func didFailedGetingDataFromPinterestTestService(error:Error?)
     
+}
+struct WebServicesURLFactory {
+    static var URLForMainPageAPI = URL(string:"http://pastebin.com/raw/wgkJgazE")
 }

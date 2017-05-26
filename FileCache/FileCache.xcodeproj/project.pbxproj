@@ -45,6 +45,7 @@
 		635EBF951ED75E7D001A03D1 /* LinksForPinterestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EBF941ED75E7D001A03D1 /* LinksForPinterestUser.swift */; };
 		635EBF971ED75FF7001A03D1 /* UrlsOfPinterestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */; };
 		635EBF991ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */; };
+		639BF7671ED8DC6A00876D1E /* CollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BF7661ED8DC6A00876D1E /* CollectionViewFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		635EBF941ED75E7D001A03D1 /* LinksForPinterestUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksForPinterestUser.swift; sourceTree = "<group>"; };
 		635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlsOfPinterestObject.swift; sourceTree = "<group>"; };
 		635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatagoriesOfPenterestObject.swift; sourceTree = "<group>"; };
+		639BF7661ED8DC6A00876D1E /* CollectionViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,18 +232,13 @@
 		126B02B11ED5605A0029F891 /* FileCacheDemo */ = {
 			isa = PBXGroup;
 			children = (
+				639BF75F1ED8798500876D1E /* Custom Controls */,
 				635EBF8D1ED74F42001A03D1 /* Models */,
 				635EBF8A1ED74E46001A03D1 /* Utils */,
 				635EBF891ED74E27001A03D1 /* WebServicesManagers */,
+				639BF75D1ED8793900876D1E /* User Interface */,
 				635EBF881ED74E19001A03D1 /* ViewControllers */,
-				635EBF841ED72DD4001A03D1 /* CollectionViewCell.swift */,
-				126B02B21ED5605A0029F891 /* AppDelegate.swift */,
-				126B02B41ED5605A0029F891 /* ViewController.swift */,
-				126B02B61ED5605A0029F891 /* Main.storyboard */,
-				126B02BC1ED5605A0029F891 /* Assets.xcassets */,
-				126B02BE1ED5605A0029F891 /* LaunchScreen.storyboard */,
-				126B02C11ED5605A0029F891 /* Info.plist */,
-				126B02B91ED5605A0029F891 /* FileCacheDemo.xcdatamodeld */,
+				639BF75E1ED8796A00876D1E /* Supporting Files */,
 			);
 			path = FileCacheDemo;
 			sourceTree = "<group>";
@@ -322,6 +319,7 @@
 		635EBF881ED74E19001A03D1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				126B02B41ED5605A0029F891 /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -350,6 +348,35 @@
 				1273583E1ED80282004ECCBA /* Custome Pinterest */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		639BF75D1ED8793900876D1E /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				126B02B61ED5605A0029F891 /* Main.storyboard */,
+				126B02BE1ED5605A0029F891 /* LaunchScreen.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		639BF75E1ED8796A00876D1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				126B02B21ED5605A0029F891 /* AppDelegate.swift */,
+				126B02BC1ED5605A0029F891 /* Assets.xcassets */,
+				126B02C11ED5605A0029F891 /* Info.plist */,
+				126B02B91ED5605A0029F891 /* FileCacheDemo.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		639BF75F1ED8798500876D1E /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				635EBF841ED72DD4001A03D1 /* CollectionViewCell.swift */,
+				639BF7661ED8DC6A00876D1E /* CollectionViewFooter.swift */,
+			);
+			name = "Custom Controls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +622,7 @@
 				635EBF8F1ED74FB6001A03D1 /* CustomPinterestObjectModel.swift in Sources */,
 				635EBF991ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift in Sources */,
 				1273583D1ED7F269004ECCBA /* NSDate+CustomeActions.swift in Sources */,
+				639BF7671ED8DC6A00876D1E /* CollectionViewFooter.swift in Sources */,
 				635EBF8C1ED74E7D001A03D1 /* WebServicesManager.swift in Sources */,
 				635EBF931ED75DCC001A03D1 /* ProfileImages.swift in Sources */,
 				635EBF851ED72DD4001A03D1 /* CollectionViewCell.swift in Sources */,

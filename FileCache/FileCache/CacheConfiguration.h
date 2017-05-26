@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 typedef NS_ENUM(NSUInteger, CacheType) {
-    Memory,
-    File,
+    Memory = 1,
+    File = 2,
 };
 
 
