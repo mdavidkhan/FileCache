@@ -22,6 +22,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     var painterestItemsArray:NSMutableArray? = []
     
+    @IBOutlet weak var JSONLoadingIndicator: UIActivityIndicatorView!
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -52,6 +53,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.cacheManager.applyCacheCustomConfiguration(configuration)
         
         //start downloading the API data 
+        self.JSONLoadingIndicator.startAnimating()
         WebServicesManager.sharedInstance.delegate = self
         WebServicesManager.sharedInstance.downloadTheJSONDataUsingUrl(dataURL: WebServicesURLFactory.URLForMainPageAPI!)
         
@@ -132,6 +134,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self .loadMoreData()
         //stop reloading indicator at top of collection view 
         refreshControl.endRefreshing()
+        self.JSONLoadingIndicator.stopAnimating()
     }
     
     func didFailedGetingDataFromPinterestTestService(error: Error?) {
