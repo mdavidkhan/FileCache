@@ -68,15 +68,16 @@
     [[FileDownloader sharedFileDownloader] cancelOperationWithTimeStamp:timeStamp];
 }
 
--(void)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock{
+-(NSString *)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock{
     //reuse the same method but just change the data to image
-  [self getDataFromURL:imageURL WithCompletionHandler:^(FileInfo *file, NSError *error) {
-      UIImage *image;
-      if (error == nil && file != nil) {
-          image = [UIImage imageWithData:[file getFileData]];
-      }
-      completionBlock(image,error);
-  }];
+    NSString *timeStamp = [self getDataFromURL:imageURL WithCompletionHandler:^(FileInfo *file, NSError *error) {
+        UIImage *image;
+        if (error == nil && file != nil) {
+            image = [UIImage imageWithData:[file getFileData]];
+        }
+        completionBlock(image,error);
+    }];
+    return timeStamp;
 }
 
 #pragma mark - Cache Operation
@@ -97,5 +98,13 @@
 }
 -(void)removeAllObjectFromCache{
     [_cacheManager.currentCache removeAllObjects];
+}
+-(BOOL)isFileInCacheUsingURL:(NSURL *)fileURL{
+    if ([self getCachedObjectByURL:fileURL] != nil) {
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 @end

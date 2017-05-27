@@ -16,11 +16,11 @@
 
 -(NSString *)getDataFromURL:(NSURL *)dataURL WithCompletionHandler:(void (^)(FileInfo* file, NSError* error))completionBlock;
 
--(void)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock;
+-(NSString *)getImageFromURL:(NSURL *)imageURL WithCompletionHandler:(void (^)(UIImage * image, NSError* error))completionBlock;
 
 -(void)applyCacheCustomConfiguration :(CacheConfiguration *)configuration;
 -(void)cancelDownloadOperationWithTimeStamp :(NSString *)timeStamp;
 -(void)removeFileFromCacheUsingURL:(NSURL *) fileURL;
 -(void)removeAllObjectFromCache;
-
+-(BOOL)isFileInCacheUsingURL:(NSURL *)fileURL;
 @end

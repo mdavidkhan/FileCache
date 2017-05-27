@@ -46,6 +46,7 @@
 		635EBF971ED75FF7001A03D1 /* UrlsOfPinterestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */; };
 		635EBF991ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */; };
 		639BF7671ED8DC6A00876D1E /* CollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BF7661ED8DC6A00876D1E /* CollectionViewFooter.swift */; };
+		639BF7691ED8EF2400876D1E /* CacheFileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639BF7681ED8EF2400876D1E /* CacheFileManagerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		635EBF961ED75FF7001A03D1 /* UrlsOfPinterestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlsOfPinterestObject.swift; sourceTree = "<group>"; };
 		635EBF981ED760FC001A03D1 /* CatagoriesOfPenterestObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatagoriesOfPenterestObject.swift; sourceTree = "<group>"; };
 		639BF7661ED8DC6A00876D1E /* CollectionViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFooter.swift; sourceTree = "<group>"; };
+		639BF7681ED8EF2400876D1E /* CacheFileManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheFileManagerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			children = (
 				126B02A01ED55E440029F891 /* FileCacheTests.m */,
 				126B02A21ED55E440029F891 /* Info.plist */,
+				639BF7681ED8EF2400876D1E /* CacheFileManagerTests.m */,
 			);
 			path = FileCacheTests;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639BF7691ED8EF2400876D1E /* CacheFileManagerTests.m in Sources */,
 				126B02A11ED55E440029F891 /* FileCacheTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
