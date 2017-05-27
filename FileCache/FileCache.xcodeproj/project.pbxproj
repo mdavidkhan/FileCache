@@ -228,9 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				126B02A01ED55E440029F891 /* FileCacheTests.m */,
-				126B02A21ED55E440029F891 /* Info.plist */,
 				639BF7681ED8EF2400876D1E /* CacheFileManagerTests.m */,
 				639BF76A1ED95C1100876D1E /* CacheManagmentTest.m */,
+				126B02A21ED55E440029F891 /* Info.plist */,
 			);
 			path = FileCacheTests;
 			sourceTree = "<group>";

@@ -24,14 +24,14 @@
 
     NSURL * url = [NSURL URLWithString:@"http://pastebin.com/raw/wgkJgazE"];
     NSString *timeStamp =[_cacheManager getDataFromURL:url WithCompletionHandler:^(FileInfo *file, NSError *error) {}];
-    XCTAssetNotNil(timeStamp,"the timeStam is not working anymore")
+    XCTAssertNotNil(timeStamp,"the timeStam is not working anymore");
     
 }
 -(void)testAddingFileToCache{
     NSURL * url = [NSURL URLWithString:@"http://pastebin.com/raw/wgkJgazE"];
     [_cacheManager getDataFromURL:url WithCompletionHandler:^(FileInfo *file, NSError *error) {
         if (error == nil) {
-            XCTAssertTrue([_cacheManager isFileInCacheUsingURL:url],"the file is not saved in cache")
+            XCTAssertTrue([_cacheManager isFileInCacheUsingURL:url],"the file is not saved in cache");
         }
     }];
 }
@@ -42,7 +42,7 @@
     [_cacheManager getImageFromURL:url WithCompletionHandler:^(UIImage *image, NSError *error) {
         
         if (error == nil) {
-            XCTAssertTrue([_cacheManager isFileInCacheUsingURL:url],"the file is not saved in cache")
+            XCTAssertTrue([_cacheManager isFileInCacheUsingURL:url],"the file is not saved in cache");
         }
         
     }];
@@ -51,7 +51,7 @@
 -(void)testAddingImageTimeStamp{
     NSURL * url = [NSURL URLWithString:@"https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=1881cd689e10e5dca28839e68678f432"];
     NSString *timeStamp = [_cacheManager getImageFromURL:url WithCompletionHandler:^(UIImage *image, NSError *error) {}];
-    XCTAssetNotNil(timeStamp,"the timeStamp for images is not working anymore")
+    XCTAssertNotNil(timeStamp,"the timeStamp for images is not working anymore");
 }
 
 -(void)testRemovingObjectsFromCache{
@@ -61,8 +61,8 @@
         
         if (error == nil && [_cacheManager isFileInCacheUsingURL:url]) {
             //thouh remove file after adding it succefully
-            [_cacheManager removeFileFromCacheUsingURL:url]
-            XCTAssetFalse([_cacheManager isFileInCacheUsingURL:url],"File has not been deleted yet some issue ocuures");
+            [_cacheManager removeFileFromCacheUsingURL:url];
+            XCTAssertFalse([_cacheManager isFileInCacheUsingURL:url],"File has not been deleted yet some issue ocuures");
         }
         
     }];

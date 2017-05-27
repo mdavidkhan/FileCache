@@ -19,7 +19,7 @@
 /**
  thie property holds all the configuration that will apply to the cache object
  */
-@property (strong, nonatomic) CacheConfiguration * congiguration;
+@property (strong, nonatomic) CacheConfiguration * configuration;
 
 
 /**

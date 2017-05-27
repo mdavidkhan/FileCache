@@ -110,6 +110,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 }
             }
         }
+       
+        
+        
         //MARK: canceling request code
         //this code will be used to cancel the on going operation with specific times stamp
         //        self.cacheManager.cancelDownloadOperation(withTimeStamp: operationTimeStamp);

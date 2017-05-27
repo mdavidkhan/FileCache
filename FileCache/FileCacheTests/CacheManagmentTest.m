@@ -10,6 +10,7 @@
 #import "CacheManager.h"
 #import "CacheConfiguration.h"
 #import "CacheFileManager.h"
+#import "Utils.h"
 
 @interface CacheManagmentTest : XCTestCase
 
@@ -27,22 +28,25 @@
 //MARK: after initialization tests
 
 -(void)testTheDefaultConfigurationIsLoadedOrNot{
-    XCTAssertNotNil(_manager.congiguration,"The Default configuration are not loaded tho :P");
+    XCTAssertNotNil(_manager.configuration,"The Default configuration are not loaded tho :P");
 }
 
 -(void)testTheDefaultConfigurationValues{
-    XCTAssertEqual(_manager.congiguration.maximumCapacity, 0,"The default configuration for max storage are not set propely");
-    XCTAssertEqual(_manager.congiguration.MaximumNumberOfFiles, 0,"the default configuration for max files are not set properly");
-    XCTAssertEqual(_manager.congiguration.cacheType, CacheType.Memory,"the memory type is not initilaized as required, although this functionlity is not much fuctional but this is for future work ")
+    
+    XCTAssertTrue(_manager.configuration.maximumCapacity >= 0,"The default configuration for max storage are not set propely");
+
+    XCTAssertTrue(_manager.configuration.MaximumNumberOfFiles >= 0,"the default configuration for max files are not set properly");
+    
+    XCTAssertEqual(_manager.configuration.cacheType, 0,"the memory type is not initilaized as required, although this functionlity is not much fuctional but this is for future work ");
 }
 
 -(void)testTheCustomConfigurationApplyingOnCache{
     
-    CacheConfiguration *customeConfiguration =[[CacheConfiguration alloc] initWithCustomeConfigurationWithMaximumMemoryCapacity:100 withMaximumNumberOfFiles:150 withCacheType:.Memory];
+    CacheConfiguration *customeConfiguration = [[CacheConfiguration alloc] initWithCustomeConfigurationWithMaximumMemoryCapacityInMBs:100 withMaximumNumberOfFiles:150 withCacheType:0];
     
     [_manager applyCustomeConfiguration:customeConfiguration];
     
-    XCTAssertEqual(_manager.currentCache.totalCostLimit, 100,"the max capacity value is not applying to cahce ");
+    XCTAssertEqual(_manager.currentCache.totalCostLimit, [Utils ConvertMBsToBytes:100],"the max capacity value is not applying to cahce ");
     XCTAssertEqual(_manager.currentCache.countLimit, 150,"the max number of files value is not apply to the Cache");
     
 }
@@ -54,7 +58,7 @@
         if (error ==nil && [fileManagerOfCache isFileInCacheUsingURL:url]) {
             //now remove all items after successfully loading file
             [_manager clearCache];
-            XCTAssertNil([_manager.currentCache objectForKey:url.absoluteString],"the File is not removed from the cahe")
+            XCTAssertNil([_manager.currentCache objectForKey:url.absoluteString],"the File is not removed from the cahe");
         }
     }];
    
