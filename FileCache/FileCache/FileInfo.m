@@ -18,12 +18,12 @@
         _isCancelled = NO;
         //init with current date and time
         _lastAccess = [NSDate date];
-        }
-        return self;
+    }
+    return self;
 }
 
 -(NSData *)getFileData{
-     //update the date on every eccess
+    //update the date on every eccess
     [self UpdateAccess];
     return _fileData;
 }
@@ -39,7 +39,7 @@
     }
 }
 -(void)UpdateAccess{
-   
+    
     _lastAccess = [NSDate date];
 }
 @end

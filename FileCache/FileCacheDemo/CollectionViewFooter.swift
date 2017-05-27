@@ -8,8 +8,11 @@
 
 import UIKit
 
+/// the footer view with and animating activity indicator which is used to animate while loading of new cells
 class CollectionViewFooter: UICollectionReusableView {
   
+    
+    /// the loading indicator 
     var loadingIndicator:UIActivityIndicatorView?
     
     override init(frame: CGRect) {
@@ -22,6 +25,7 @@ class CollectionViewFooter: UICollectionReusableView {
         postInit()
     }
     
+    /// customaized initilaization
     func postInit() {
         loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         loadingIndicator?.hidesWhenStopped = true

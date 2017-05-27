@@ -9,11 +9,13 @@
 import UIKit
 
 
+/// the custome cell used to display on main collection view
 class CollectionViewCell: UICollectionViewCell {
     
     var imageView : UIImageView!
     
     var timeStamp : NSString!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +36,8 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.image = UIImage(named: "default-placeholder")
         self.designUIOfCurrentCell()
     }
+    
+    /// add some detecent animation to the cell
     func addAnimationTOView() {
         let rotation: CATransform3D = CATransform3DMakeRotation((2.0 * .pi) / 180, 0.0, 0.5, 0.5)
         self.contentView.alpha = 0.8
@@ -47,7 +51,7 @@ class CollectionViewCell: UICollectionViewCell {
         })
 
     }
-    
+    /// this will add the shadow and round corners to  the current class
     func designUIOfCurrentCell(){
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 1.0
@@ -61,6 +65,7 @@ class CollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
+    
     override func prepareForReuse() {
         imageView.image = nil
         imageView.image = UIImage(named: "default-placeholder")

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// sub model of CustomePainterestObjectModel and it will save as property in that model 
 class CatagoriesOfPenterestObject: NSObject {
 
     var id: Double?

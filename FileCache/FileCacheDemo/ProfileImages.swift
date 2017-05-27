@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// sub model of userOfPinterest Model class and it will save as property in that model 
 class ProfileImages: NSObject {
     var small:String?
     

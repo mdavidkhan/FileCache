@@ -8,10 +8,14 @@
 
 import UIKit
 
+
+/// this will used to identify the associseated object for MaxNumaber for new files loading
 private var MaxNumberAssociationKey: UInt8 = 0
 
+// MARK: - extention to NSmutable array for main view controller 
 extension NSMutableArray {
     
+    /// store the MAX number of files loading at a time by main view controller (By default this value is 10 )
     var maximimNumberForNewFilesLoading:Double! {
         get {
             let oldValue = objc_getAssociatedObject(self, &MaxNumberAssociationKey) as? Double

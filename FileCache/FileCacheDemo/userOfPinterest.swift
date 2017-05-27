@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// sub model of CustomePainterestObjectModel and it will save as property in that model 
 class userOfPinterest: NSObject {
     
     var id:String?

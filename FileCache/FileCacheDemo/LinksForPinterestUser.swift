@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// sub model of userOfPinterest Model class and it will save as property in that model
 class LinksForPinterestUser: NSObject {
     
     var selfURLString:String?

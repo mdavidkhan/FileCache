@@ -8,19 +8,7 @@
 
 import UIKit
 
+/// the utils class for the current app this will be used as general utility methods factory every utility method associsated with this app will be here
 class Utils: NSObject {
 
-    class func addLatestObjectsToArray (toArray:NSMutableArray,frombackUpArray:[CustomPinterestObjectModel],numberOfObject:Int)  {
-        var firstMaxObject:[CustomPinterestObjectModel]? = []
-        if frombackUpArray.count >= numberOfObject {
-            firstMaxObject = Array(frombackUpArray.prefix(numberOfObject))
-        }
-        else{
-            
-            firstMaxObject = Array(frombackUpArray.prefix(frombackUpArray.count))
-        }
-        for object in firstMaxObject!{
-            toArray.add(object)
-        }
-    }
 }
